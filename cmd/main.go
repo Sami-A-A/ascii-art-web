@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+
+	// Port
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
@@ -17,9 +19,17 @@ func main() {
 	serveMux := http.NewServeMux()
 
 	// Initialize Routes
-	routes.UseRoutes()
+	routes.UseRoutes(serveMux)
 
-	// Port and Serve Mux with error handling for server
+	// File Servers
+	static := http.FileServer(http.Dir("../static"))
+	styles := http.FileServer(http.Dir("../styles"))
+
+	serveMux.Handle("/static/assets/", http.StripPrefix("/static/assets/", static))
+	serveMux.Handle("/static/asciifonts/", http.StripPrefix("/static/asciifonts/", static))
+	serveMux.Handle("/styles/", http.StripPrefix("/styles", styles))
+
+	// Port and Serve Mux with error handling for running server
 	err := http.ListenAndServe(":" + port, serveMux)
 	if err != nil {
 		log.Fatalf("Error starting server: %s\n", err)
@@ -28,16 +38,3 @@ func main() {
 	}
 
 }
-
-// func main() {
-// 	// Define the handler function for the "/" route
-// 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-// 		fmt.Fprintln(w, "Hello, World!")
-// 	})
-
-// 	// Start the server on port 8080
-// 	err := http.ListenAndServe(":8080", nil)
-// 	if err != nil {
-// 		log.Fatalf("Error starting server: %s\n", err)
-// 	}
-// }
