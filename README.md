@@ -29,7 +29,7 @@ Or if you're name is Zeeshan and you are currently viewing this README you can j
 
 
 
->Navigate to your main project folder in your terminal and use the following command
+>On the terminal navigate to your project folder and use the following command:
 >
 >```$ git clone https://learn.reboot01.com/git/sabdulaa/ascii-art-web.git```
 >
@@ -37,16 +37,17 @@ Or if you're name is Zeeshan and you are currently viewing this README you can j
 >
 >```$ git fetch --all```
 >
-> * *this copies all the branches in the remote repository*
-> In the VS Code terminal run the following command
+> * *this copies all the branches in the remote repository*  
+>
+> On the terminal run the following command
 >
 >```$ git checkout dev-2```
 >
->* *I made sure to make it identical to the branch I'm working on (dev-1) and any changes you make won't affect the other branches (until we merge and resolve any conflicts) so go ham*
+>* *You can work on this branch. I made sure to make it identical to the branch I'm working on (dev-1) and any changes you make won't affect the other branches (until we merge and resolve any conflicts) so go ham*
 >
 >On the terminal navigate to the ```/cmd``` folder.  
 >
->Use ```$ go run main.go``` when you want to start the server and use ``` ctrl + c ``` to stop the server. It should be running on http://localhost:8080
+>Use ```$ go run main.go``` anytime you want to start the server and use ``` ctrl + c ``` to stop the server. It should be running on http://localhost:8080
 >
 > When you push or pull any changes make sure to use the following
 >
@@ -54,7 +55,7 @@ Or if you're name is Zeeshan and you are currently viewing this README you can j
 > ```$ git pull origin dev-2```
 >
 >* *I might be missing a few instructions but basically you just need to be in the right branch when you make changes so when you push it doesn't break the code.*
->* *Some nice tips: commit often and preferably commit only when the program actually runs so if there are any lines causing errors, comment it out*
+>* *Some nice tips: commit often and preferably commit only when the program actually runs so if there are any lines causing errors, comment them out*
 
 ## Technologies Used
 
