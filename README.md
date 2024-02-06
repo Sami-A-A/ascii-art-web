@@ -23,7 +23,38 @@ The learning objective of Ascii Art Web was to get familiar with the Golang web 
 
 ## Usage
 
-You may visit the deployed application [here]().
+You may visit the deployed application [here]() (work in progress).
+
+Or if you're name is Zeeshan and you are currently viewing this README you can just follow these steps to set up everything on your local machine so you can get started
+
+
+
+>Navigate to your main project folder in your terminal and use the following command
+>
+>```$ git clone https://learn.reboot01.com/git/sabdulaa/ascii-art-web.git```
+>
+> - *this creates a folder called ascii-art-web with .git already initialized so you don't need to make a new folder called "ascii-art" or anything before pulling*
+>
+>```$ git fetch --all```
+>
+> * *this copies all the branches in the remote repository*
+> In the VS Code terminal run the following command
+>
+>```$ git checkout dev-2```
+>
+>* *I made sure to make it identical to the branch I'm working on (dev-1) and any changes you make won't affect the other branches (until we merge and resolve any conflicts) so go ham*
+>
+>On the terminal navigate to the ```/cmd``` folder.  
+>
+>Use ```$ go run main.go``` when you want to start the server and use ``` ctrl + c ``` to stop the server. It should be running on http://localhost:8080
+>
+> When you push or pull any changes make sure to use the following
+>
+> ```$ git push origin dev-2```  
+> ```$ git pull origin dev-2```
+>
+>* *I might be missing a few instructions but basically you just need to be in the right branch when you make changes so when you push it doesn't break the code.*
+>* *Some nice tips: commit often and preferably commit only when the program actually runs so if there are any lines causing errors, comment it out*
 
 ## Technologies Used
 
