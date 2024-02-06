@@ -22,11 +22,12 @@ func main() {
 	routes.UseRoutes(serveMux)
 
 	// File Servers
-	static := http.FileServer(http.Dir("../static"))
+	assets := http.FileServer(http.Dir("../static/assets"))
+	banners := http.FileServer(http.Dir("../static/banners"))
 	styles := http.FileServer(http.Dir("../styles"))
 
-	serveMux.Handle("/static/assets/", http.StripPrefix("/static/assets/", static))
-	serveMux.Handle("/static/asciifonts/", http.StripPrefix("/static/asciifonts/", static))
+	serveMux.Handle("/static/assets/", http.StripPrefix("/static/assets/", assets))
+	serveMux.Handle("/static/banners/", http.StripPrefix("/static/banners/", banners))
 	serveMux.Handle("/styles/", http.StripPrefix("/styles", styles))
 
 	// Port and Serve Mux with error handling for running server

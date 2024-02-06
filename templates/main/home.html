@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon (Can't get to work)-->
-    <link rel="icon" type="image/x-icon" href="../../static/assets/favicon.ico">
+    <!-- <link rel="icon" type="image/x-icon" href="../../static/assets/favicon.ico"> -->
     <link rel="icon" type="image/png" href="../../static/assets/favicon.png">
 
     <!-- Styles -->
@@ -18,84 +18,81 @@
 
 </head>
 <body>
-    <div class="options-panel">
+    <div class="main">
         <header>Ascii Art</header>
         <section>
-            <form action="/ascii-art" method="post">
+            <div class="options-panel">
+                <form action="/ascii-art" method="post">
 
-                <div class="options-area">
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="color">Color:</label>
-                            </td>
-                            <td>
-                                <input type="color" id="color" name="color" readonly>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="Banner">Banner:</label>
-                            </td>
-                            <td>
-                                <select id="banner" name="banner">
-                                    <option value="" disabled selected>--Select a Banner--</option>
-                                    <option value="standard">Standard</option>
-                                    <option value="shadow">Shadow</option>
-                                    <option value="thinkertoy">Thinkertoy</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="Alignment">Alignment:</label>
-                            </td>
-                            <td>
-                                <select id="alignment" name="alignment">
-                                    <option value="" disabled selected>--Select Alignment--</option>
-                                    <option value="left">Left-Align</option>
-                                    <option value="right">Right-Align</option>
-                                    <option value="center">Center-Align</option>
-                                    <option value="justify">Justify</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="export">Export As:</label>
-                            </td>
-                            <td>
-                                <select id="export" name="export">
-                                    <option value="" disabled selected>--Export As--</option>
-                                    <option value="txt">.txt</option>
-                                    <option value="docx">.docx</option>
-                                    <option value="pdf">.pdf</option>
-                                    <option value="xml">.xml</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="options-area">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="color">Color:</label>
+                                </td>
+                                <td>
+                                    <input type="color" id="color" name="color" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="Banner">Banner:</label>
+                                </td>
+                                <td>
+                                    <select id="banner" name="banner">
+                                        <option value="" disabled selected>--Select a Banner--</option>
+                                        <option value="standard">Standard</option>
+                                        <option value="shadow">Shadow</option>
+                                        <option value="thinkertoy">Thinkertoy</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="Alignment">Alignment:</label>
+                                </td>
+                                <td>
+                                    <select id="alignment" name="alignment">
+                                        <option value="" disabled selected>--Select Alignment--</option>
+                                        <option value="left">Left-Align</option>
+                                        <option value="right">Right-Align</option>
+                                        <option value="center">Center-Align</option>
+                                        <option value="justify">Justify</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="export">Export As:</label>
+                                </td>
+                                <td>
+                                    <select id="export" name="export">
+                                        <option value="" disabled selected>--Export As--</option>
+                                        <option value="txt">.txt</option>
+                                        <option value="docx">.docx</option>
+                                        <option value="pdf">.pdf</option>
+                                        <option value="xml">.xml</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
 
-                    <div>
-                        <textarea id="text" name="text" rows="6" cols="30"></textarea>
+                        <div>
+                            <textarea id="text" name="text" rows="6" cols="30"></textarea>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="buttons">
-                    <button type="submit" id="print">Export</button>
-                    <button type="submit" id="print">Print</button>
-                </div>
-
-                
-            </form>
+                    
+                    <div class="buttons">
+                        <button type="submit" id="print">Export</button>
+                        <button type="submit" id="print">Print</button>
+                    </div>           
+                </form>
+            </div>
         </section>
-
-
+        <div class="ascii-art">
+            {{.Ascii}}
+        </div>
     </div>
-    
 
-    <div class="ascii-art">
-        {{.Ascii}}
-    </div>
 </body>
 </html>
