@@ -54,7 +54,7 @@ Or if you're name is Zeeshan and you are currently viewing this README you can j
 > ```$ git push origin dev-2```  
 > ```$ git pull origin dev-2```
 >
->* *I might be missing a few instructions but basically you just need to be in the right branch when you make changes so when you push it doesn't break the code.*
+>* *I might be missing a few instructions but basically you just need to be in the right branch when you make changes so we can minimize the amount of conflicts when we merge.*
 >* *Some nice tips: commit often and preferably commit only when the program actually runs so if there are any lines causing errors, comment them out*
 
 ## Technologies Used
