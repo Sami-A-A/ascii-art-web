@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"asciiartweb/pkg/asciiartutil"
 	"html/template"
 	"net/http"
 )
@@ -72,5 +73,40 @@ func ErrorInternalController(res http.ResponseWriter, req *http.Request) {
 
 // Ascii Art Controller
 func PrintAsciiArtController(res http.ResponseWriter, req *http.Request){
-	
+	// Read the Request
+	// ParseForm
+	err := req.ParseForm()
+	if err != nil {
+		http.Redirect(res, req, "/400", 400)
+		return
+	}
+	// GET values
+
+	asciiArt := asciiartutil.AsciiArtData{
+		Color: req.Form.Get("color"),
+		Banner: req.Form.Get("banner"),
+		Alignment: req.Form.Get("alignment"),
+		Export: req.Form.Get("export"),
+		Text: req.Form.Get("text"),
+	}
+
+	data := struct {
+		Ascii string
+	}{
+		Ascii: asciiartutil.PrintAsciiArt(asciiArt),
+	}
+
+	tmpl, err := template.ParseFiles("../templates/main/home.html")
+	if err != nil {
+		http.Error(res, "Well that's embarrassing", http.StatusInternalServerError)
+		return
+	}
+
+	err = tmpl.Execute(res, data)
+
+	if err != nil {
+		http.Error(res, "Well that's embarrassing", http.StatusInternalServerError)
+		return
+	}
+
 }
